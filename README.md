@@ -12,3 +12,9 @@
 ---
 
 ### Code will be released plan within Jan. 2025.
+
+Enviroment based on Python 3.9.12
+
+---
+pip install -r requirements.txt
+---
