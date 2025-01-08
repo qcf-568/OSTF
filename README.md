@@ -4,7 +4,7 @@
 
 ---
 
-### The Open-Set Text Forensics (OSTF) dataset is now publicly available at [Kaggle](https://pan.baidu.com/s/1r8hr9IUN2uJ5If4s4B4Dlg?pwd=OSTF) and [Baidu Drive](https://pan.baidu.com/s/1r8hr9IUN2uJ5If4s4B4Dlg?pwd=OSTF). 
+### The Open-Set Text Forensics (OSTF) dataset is now publicly available at [Google Drive](https://drive.google.com/file/d/16Pyv7nLBOsOefwzdCsa0ndXxnzknfxtw/view?usp=sharing) and [Baidu Drive](https://pan.baidu.com/s/10FbI3SfWWV92vqv3X-ILxQ?pwd=OSTF). 
 
 <font size=10>Researchers are welcome 😃 to apply for this dataset by sending an email to  202221012612@mail.scut.edu.cn (with institution email address) and introducing:</font><br/>
 1. Who you are and your institution.
@@ -15,6 +15,6 @@
 
 Enviroment based on Python 3.9.12
 
----
 pip install -r requirements.txt
+
 ---
