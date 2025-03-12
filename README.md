@@ -89,6 +89,10 @@ Enviroment based on Python 3.9.12
 
 pip install -r requirements.txt
 
+```
 bash tools/dist_train.sh [your config_py_file] [Your gpu number, should be consistent to the dist_train.sh]
+```
+
+The config files are in the config dir, all the config files following such name roles: ModelType_AblationType+TrainData.py. For the AblationType, o is for the original one without Texture Jitter Pre-training and x is the one with the Texture Jitter Pre-training. For example, fasterrcnn_xsrnet is the Faster R-CNN model pre-trained with Texture Jitter, and fine-tuned with the SR-Net training data and Texture Jitter.
 
 ---
