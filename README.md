@@ -96,3 +96,8 @@ bash tools/dist_train.sh [your config_py_file] [Your gpu number, should be consi
 The config files are in the config dir, all the config files following such name roles: ModelType_AblationType+TrainData.py. For the AblationType, o is for the original one without Texture Jitter Pre-training and x is the one with the Texture Jitter Pre-training. For example, fasterrcnn_xsrnet is the Faster R-CNN model pre-trained with Texture Jitter, and fine-tuned with the SR-Net training data and Texture Jitter.
 
 ---
+### Pre-trained models
+I have kept almost all the pre-trained models, but the google drive space is not enough to hold all of them. So I provide the pre-trained models and SR-Net fine-tuned models of Cascade R-CNN and Faster R-CNN being trained with our methods in [this file](). If you need more model weights, you can concat me to get them via educational email.
+
+---
+### Inference
