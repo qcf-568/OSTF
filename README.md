@@ -110,5 +110,9 @@ I have kept almost all the pre-trained models, but the google drive space is not
 
 ---
 ### Inference
+
+### Evaluation
+After inference, the model prediction is converted into .txt files, zipped and evaluated following the same [official Tampered-IC13 evaluation tools and methods](https://github.com/wangyuxin87/Tampered-IC13).
+
 ---
 ### Any bugs or questions please open an issue or concat me with email.
