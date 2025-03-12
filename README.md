@@ -10,8 +10,14 @@
 1. Who you are and your institution.
 2. Who is your supervisor/mentor.
 ---
-
-### Code already uploaded, now writing the instructions. All will be completed in 3.10-3.12 of 2025.
+### Texture Jitter train data preparation
+1. Download and unzip the [pretrain_pk.zip](https://drive.google.com/file/d/1xvu82bZvgq7TBXEjByFvuGi6th5ifsHY/view?usp=sharing) in this dir. After unzip, you will get a new dir named "pretrain" with 7 sub-dirs (ArT, ICDAR2013, ICDAR2015, ICDAR2017-MLT, LSVT, ReCTS, TextOCR).
+2. Download the dataset images from [ArT](https://rrc.cvc.uab.es/?ch=14&com=introduction), [ICDAR2013](https://rrc.cvc.uab.es/?ch=2&com=introduction), [ICDAR2015](https://rrc.cvc.uab.es/?ch=4&com=introduction), [ICDAR2017-MLT](https://rrc.cvc.uab.es/?ch=8&com=introduction), [LSVT](https://rrc.cvc.uab.es/?ch=16&com=introduction), [ReCTS](https://rrc.cvc.uab.es/?ch=12&com=introduction), [TextOCR](https://textvqa.org/textocr/dataset/).
+3. Rename the 7 downloaded image dirs into an "img" dir under the 7 sub-dirs. For example, "mv [Your downloaded ArT train images] pretrain/ArT/img" and "mv [Your downloaded ReCTS train images] pretrain/ReCTS/img".
+4. Make a new dir named "revjpegs" in this main dir, and make sub-dirs to make sure that the dir "revjpegs" has the same sub-dir structure as the "pretrain" dir. For example, it should has the dirs "revjpegs/ArT/img" and "revjpegs/ReCTS/img", etc.
+5. Download the fbcnn_color.pth . Run the command to create revjpeg images for each of the 7 sub-dir images of the pretrain dir.
+---
+### Train
 
 Enviroment based on Python 3.9.12
 
