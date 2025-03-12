@@ -110,6 +110,13 @@ I have kept almost all the pre-trained models, but the google drive space is not
 
 ---
 ### Inference
+```"mv mmdet mmdet_train; unzip mmdet_test.zip```
+Then modify the config file you used in training:
+1. Find the line with "max_per_img=100)))" and modify this into "max_per_img=1000)))".
+2. Find the line with "FTIC15" and modify this into "FTIC15PK"
+3. (Optional) Find the line "datasets = [test_srnet, test_stefann, test_mostel, test_derend, test_diffste, test_anytext, test_udifftext],", and modify it into your test dataset (may be a single one such as 'datasets = test_srnet,').
+```bash tools/dist_test.sh [your config file] [model weights to evaluate] 1```
+Then you will get a new .pk file in a newly created dir named "results"
 
 ### Evaluation
 After inference, the model prediction is converted into .txt files, zipped and evaluated following the same [official Tampered-IC13 evaluation tools and methods](https://github.com/wangyuxin87/Tampered-IC13).
