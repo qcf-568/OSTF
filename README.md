@@ -58,4 +58,6 @@ Enviroment based on Python 3.9.12
 
 pip install -r requirements.txt
 
+bash tools/dist_train.sh [your config_py_file] [Your gpu number, should be consistent to the dist_train.sh]
+
 ---
