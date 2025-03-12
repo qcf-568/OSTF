@@ -10,6 +10,37 @@
 1. Who you are and your institution.
 2. Who is your supervisor/mentor.
 ---
+### OSTF Train data preparation
+1. Apply, download and unzip the OSTF dataset.
+2. Move all the 18 *.pk files in to the mmacc dir.
+3. Move the mmacc dir into this main dir.
+Finally, after the above 5 steps, in this main dir, you will get such dir structre:
+```
+FBCNN---...
+  |
+configs---...
+  |
+mmcv_custom---...
+  |
+mmdet---...
+  |
+tools---...
+  |
+mmacc---srnet---...
+          |
+        srnet_train.pk
+          |
+        srnet_test.pk
+          |
+        anytext---...
+          |
+        anytext_train.pk
+          |
+        anytext_test.pk
+          |
+         ...
+```
+---
 ### Texture Jitter train data preparation
 1. Download and unzip the [pretrain_pk.zip](https://drive.google.com/file/d/1xvu82bZvgq7TBXEjByFvuGi6th5ifsHY/view?usp=sharing) in this dir. After unzip, you will get a new dir named "pretrain" with 7 sub-dirs (ArT, ICDAR2013, ICDAR2015, ICDAR2017-MLT, LSVT, ReCTS, TextOCR).
 2. Download the dataset images from [ArT](https://rrc.cvc.uab.es/?ch=14&com=introduction), [ICDAR2013](https://rrc.cvc.uab.es/?ch=2&com=introduction), [ICDAR2015](https://rrc.cvc.uab.es/?ch=4&com=introduction), [ICDAR2017-MLT](https://rrc.cvc.uab.es/?ch=8&com=introduction), [LSVT](https://rrc.cvc.uab.es/?ch=16&com=introduction), [ReCTS](https://rrc.cvc.uab.es/?ch=12&com=introduction), [TextOCR](https://textvqa.org/textocr/dataset/).
