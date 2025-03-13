@@ -106,7 +106,7 @@ Just need to modify the pre-trained weight into your pre-trained weights, the of
 
 ---
 ### Pre-trained models
-I have kept almost all the pre-trained models, but the google drive space is not enough to hold all of them. So I provide the Texture Jitter pre-trained models and SR-Net fine-tuned models of Cascade R-CNN and Faster R-CNN being trained with our methods in [this file](https://drive.google.com/file/d/1ezb6ox-nlDk1UspCYGsSqSeSlH6DdMvC/view?usp=sharing). If you need more model weights, you can concat me to get them via educational email.
+I have kept almost all the trained models, but the google drive space is not enough to hold all of them. So I provide the Texture Jitter pre-trained models and SR-Net fine-tuned models of Cascade R-CNN and Faster R-CNN being trained with our methods in [this file](https://drive.google.com/file/d/1ezb6ox-nlDk1UspCYGsSqSeSlH6DdMvC/view?usp=sharing). If you need more model weights, you can concat me to get them via educational email.
 
 ---
 ### Inference
