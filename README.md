@@ -12,9 +12,9 @@
 ---
 ### OSTF Train data preparation
 1. Apply, download and unzip the OSTF dataset.
-2. Move all the 18 *.pk files in to the mmacc dir.
+2. Move all the 18 *.pk files from the mmacc_pks dir into the mmacc dir.
 3. Move the mmacc dir into this main dir.
-Finally, after the above 5 steps, in this main dir, you will get such dir structre:
+Finally, after the above 3 steps, in this main dir, you will get such dir structre:
 ```
 FBCNN---...
   |
