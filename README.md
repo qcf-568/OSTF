@@ -82,7 +82,7 @@ tools---...
   |
 mmacc---...
 ```
-#### The Texture Jitter method is implemented as "TextureSG" in "txt_pipeline" of the config files (e.g. [here](https://github.com/qcf-568/OSTF/blob/main/configs/cascade_xsrnet.py#L267)), it source code is [here](https://github.com/qcf-568/OSTF/blob/main/mmdet/datasets/transforms/transforms.py#L344).
+#### The Texture Jitter method is implemented as "TextureSG" in "txt_pipeline" of the config files (e.g. [here](https://github.com/qcf-568/OSTF/blob/main/configs/cascade_xsrnet.py#L267)), its source code is [here](https://github.com/qcf-568/OSTF/blob/main/mmdet/datasets/transforms/transforms.py#L344).
 #### The DAF framework is implemented as [DFPNCMap3](https://github.com/qcf-568/OSTF/blob/main/mmdet/datasets/transforms/transforms.py#L344) and [CascadeCMap3](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/cascade_cmap3.py#L46) for Faster R-CNN and Cascade R-CNN respectively.
 ---
 ### Train
