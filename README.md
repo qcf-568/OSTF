@@ -90,7 +90,7 @@ Enviroment based on Python 3.9.12
 pip install -r requirements.txt
 
 ```
-bash tools/dist_train.sh [your config_py_file] [Your gpu number, should be consistent to the dist_train.sh]
+bash tools/dist_train.sh [your config_py_file] [Your gpu number, should be consistent with the dist_train.sh]
 ```
 #### About the config files
 The config files are in the [config dir](https://github.com/qcf-568/OSTF/tree/main/configs), all the config files following such name roles: ModelType_AblationType+TrainData.py. For the AblationType, o is for the original one without Texture Jitter Pre-training and x is the one with the Texture Jitter Pre-training. For example, fasterrcnn_xsrnet is the Faster R-CNN model pre-trained with Texture Jitter, and fine-tuned with the SR-Net training data and the Texture Jitter method.
@@ -121,6 +121,8 @@ Then modify the config file you used in training:
 ```bash tools/dist_test.sh [your config file] [model weights to evaluate] 1```
 
 Then you will get a new .pk file in a newly created dir named "results"
+
+#### The offcial mmdetection inference code also applies to this repo. 
 
 ### Evaluation
 After inference, the model prediction is converted into .txt files, zipped and evaluated following the same [official Tampered-IC13 evaluation tools and methods](https://github.com/wangyuxin87/Tampered-IC13).
