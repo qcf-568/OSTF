@@ -83,7 +83,13 @@ tools---...
 mmacc---...
 ```
 #### The Texture Jitter method is implemented as "TextureSG" in "txt_pipeline" of the config files (e.g. [here](https://github.com/qcf-568/OSTF/blob/main/configs/cascade_xsrnet.py#L267)), its source code is [here](https://github.com/qcf-568/OSTF/blob/main/mmdet/datasets/transforms/transforms.py#L344).
-#### The DAF framework is implemented as [DFPNCMap3](https://github.com/qcf-568/OSTF/blob/main/mmdet/datasets/transforms/transforms.py#L344) and [CascadeCMap3](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/cascade_cmap3.py#L46) for Faster R-CNN and Cascade R-CNN respectively.
+#### The DAF framework is implemented as [DFPNCMap3](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/dfpn_cmap3.py#L28) and [CascadeCMap3](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/cascade_cmap3.py#L46) for Faster R-CNN and Cascade R-CNN respectively.
+
+DAF key implementation (take Faster R-CNN based DAF as an example): 
+1. [Line47 Authentic Kernel implementation](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/dfpn_cmap3.py#L47) The variable self.sgl implements the Authentic Kernel ([the variable self.C in Line17](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/single_center_loss.py#L17)) and its loss function ([this forward function in Line21](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/single_center_loss.py#L21)).
+2. [Line379 Authentic Kernel Modulation](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/dfpn_cmap3.py#L379) implements the modulation between te Authentic Kernel (the variable self.sgl.C) and the global features (the variable gloabl_feats). In this line, the resulting variable gloabl_feats is the modulated authentic kernel.
+3. [Line324 Training model to learn real/fake classification with feature difference](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/dfpn_cmap3.py#L324). During training, the ***feature difference*** between each RoI vector (the variable mskf) and the modulated authentic kernel (the variable glb_feats in this line) is obtained by "mskf - glb_feats[gt_valid]". Then, this feature difference vector is fed into a fully-connected layer for final real/fake prediction as "self.fc(mskf - glb_feats[gt_valid])". During training, in this Line324, the loss between model prediction "self.fc(mskf - glb_feats[gt_valid])" and the ground-truth "gt_label[gt_valid].long()" is calculated to help the model learn real/fake classification.
+4. [Line548 Model predicts real/fake with feature difference](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/dfpn_cmap3.py#L548). In this line, the modulated authentic kernel is the variables "g" and "glb_feats", the input RoI feature vectors are "m" and "mask_feats". The feature difference is obtained by "(self.convert(m)-g)" and the final classification score is obtained by fe
 ---
 ### Train
 
