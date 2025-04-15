@@ -369,6 +369,8 @@ class TextureSG(BaseTransform):
         tamps=0
         lens = len(results['gt_bboxes'])
         nospe = (not os.path.exists(os.path.join(self.revjpegpath, results['img_path'])))
+        if nospe:
+            print('NOTE THIS FILE PATH ERROR!!!!!! This means the Texture Jitter can not work due to the wrong file path!!!!!! This is a very fatal error if it frequently appears!!!!!!')
         this_canvas1 = np.zeros((h,w), dtype=np.float32)
         # this_canvas2 = this_canvas1.copy()
         shuffle_inds = {k:v for k,v in enumerate(np.random.choice(lens, lens, replace=False))}
@@ -1152,9 +1154,9 @@ class Resize(MMCV_Resize):
         else:
             img_shape = results['img'].shape[:2]
             results['scale'] = _scale_size(img_shape[::-1], self.scale_factor)
-        print('1',results['img'].shape, results['scale'])
+        # print('1',results['img'].shape, results['scale'])
         self._resize_img(results)#, results['scale'])
-        print('2',results['img'].shape, results['scale'])
+        # print('2',results['img'].shape, results['scale'])
         self._resize_bboxes(results)
         self._resize_masks(results)
         self._resize_seg(results)
