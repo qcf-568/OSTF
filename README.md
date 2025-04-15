@@ -115,6 +115,13 @@ Given a config file that contains the model defination you want to pretrain (e.g
 Just need to modify the pre-trained weight into your pre-trained weights, the official ones are [here](https://drive.google.com/file/d/1ezb6ox-nlDk1UspCYGsSqSeSlH6DdMvC/view?usp=sharing). For example, in [cascade_xsrnet.py](https://github.com/qcf-568/OSTF/blob/main/configs/cascade_xsrnet.py), modify the [Line602](https://github.com/qcf-568/OSTF/blob/main/configs/cascade_xsrnet.py#L602) from 'cascade.pth' into your pre-trained weights.
 
 ---
+### Tiny training implement
+[Here](https://pan.baidu.com/s/12Ct3jUtoqLhVFkabST1Njg?pwd=3dvz) is a tiny implement of the training code and prepared data for fast try. The playground training and test data are all prepared. This is the Cascade R-CNN training only with the Texture Jitter ICDAR2013 and tested on Tampered IC13. To run the code only needs 3 steps:
+1. Download and unzip the file. In the new dir, rename the [rcnn_swin.pth](https://github.com/qcf-568/Det_Baseline) ("rcnn_swin.pth" in the baseline zip file) to'cascade.pth'.
+2. Modify the tools/dist_train.sh "CUDA_VISIBLE_DEVICES=6,7" to your own GPU ids.
+3. run "bash tools/dist_train.sh cascade_debug.py 2"
+---
+
 ### Pre-trained models
 I have kept almost all the trained models, but the google drive space is not enough to hold all of them. So I provide the Texture Jitter pre-trained models and SR-Net fine-tuned models of Cascade R-CNN and Faster R-CNN being trained with our methods in [this file](https://drive.google.com/file/d/1ezb6ox-nlDk1UspCYGsSqSeSlH6DdMvC/view?usp=sharing). If you need more model weights, you can concat me to get them via educational email.
 
