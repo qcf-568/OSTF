@@ -146,3 +146,23 @@ After inference, the model prediction is converted into .txt files, zipped and e
 
 ---
 ### Any bug or question please open an issue or concat me with email.
+
+---
+### License
+
+The project is under [CC-BY-NC-4.0](https://www.creativecommons.org/licenses/by-nc/4.0/deed.en) license.
+
+---
+### Citation
+If you use the OSTF dataset, the Texture Jitter method or the DAF method, please cite this paper.
+```
+@inproceedings{ostf,
+  title={Revisiting tampered scene text detection in the era of generative AI},
+  author={Qu, Chenfan and Zhong, Yiwu and Guo, Fengjun and Jin, Lianwen},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={1},
+  pages={694--702},
+  year={2025}
+}
+```
