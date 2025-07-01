@@ -153,6 +153,11 @@ After inference, the model prediction is converted into .txt files, zipped and e
 The project is under [CC-BY-NC-4.0](https://www.creativecommons.org/licenses/by-nc/4.0/deed.en) license.
 
 ---
+### Ackownledgement
+
+The **SRNet** part of the OSTF dataset is directly borrowed from the [Tampered IC13 dataset](https://github.com/wangyuxin87/Tampered-IC13), thanks for their great pioneering work!
+
+---
 ### Citation
 If you use the OSTF dataset, the Texture Jitter method or the DAF method, please cite this paper.
 ```
