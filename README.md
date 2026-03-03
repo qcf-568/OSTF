@@ -128,7 +128,7 @@ Just need to modify the pre-trained weight into your pre-trained weights, the of
 ---
 
 ### Pre-trained models
-I have kept almost all the trained models, but the google drive space is not enough to hold all of them. So I provide the Texture Jitter pre-trained models and SR-Net fine-tuned models of Cascade R-CNN and Faster R-CNN being trained with our methods in [this file](https://drive.google.com/file/d/1ezb6ox-nlDk1UspCYGsSqSeSlH6DdMvC/view?usp=sharing). If you need more model weights, you can concat me to get them via educational email.
+All pre-trained models are in [BaiduCloud](https://pan.baidu.com/s/1ziqKnkqgX4pZ20MiutyCdQ?pwd=dets). Weights are in the "pths" dir. "pths/dfpn/srnet.pth": the faster-rcnn model fine-tuned on SRNet subset. "pths/cascade/srnet.pth": the cascade-rcnn model fine-tuned on SRNet subset.
 
 ---
 ### Inference
