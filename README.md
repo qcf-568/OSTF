@@ -128,7 +128,7 @@ Just need to modify the pre-trained weight into your pre-trained weights, the of
 ---
 
 ### Pre-trained models
-All pre-trained models are in [BaiduCloud](https://pan.baidu.com/s/1ziqKnkqgX4pZ20MiutyCdQ?pwd=dets). Weights are in the "pths" dir. "pths/dfpn/srnet.pth": the faster-rcnn model fine-tuned on SRNet subset. "pths/cascade/srnet.pth": the cascade-rcnn model fine-tuned on SRNet subset.
+All pre-trained models are in [BaiduCloud](https://pan.baidu.com/s/1ziqKnkqgX4pZ20MiutyCdQ?pwd=dets) or [ModelScope](https://www.modelscope.cn/models/DanceText/DAF/summary). Weights are in the "pths" dir. "pths/dfpn/srnet.pth": the faster-rcnn model fine-tuned on SRNet subset. "pths/cascade/srnet.pth": the cascade-rcnn model fine-tuned on SRNet subset.
 
 ---
 ### Inference
