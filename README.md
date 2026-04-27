@@ -46,50 +46,6 @@ mmacc---srnet---...
           |
          ...
 ```
----
-### Texture Jitter train data preparation
-1. Download and "tar -xvf" the [pretrain.tar](https://pan.baidu.com/s/1d2K9nN4XzxhAbLI-iQPJvg?pwd=OSTF) in this dir. After "tar -xvf", you will get a new dir named "pretrain" with 7 sub-dirs (ArT, ICDAR2013, ICDAR2015, ICDAR2017-MLT, LSVT, ReCTS, TextOCR). There will be a "train.pk" and a "msk" dir in each dir.
-2. Download the dataset ***training set images*** from [ArT](https://rrc.cvc.uab.es/?ch=14&com=introduction), [ICDAR2013 (Task 2.4: End to End (2015 edition))](https://rrc.cvc.uab.es/?ch=2&com=introduction), [ICDAR2015](https://rrc.cvc.uab.es/?ch=4&com=introduction), [ICDAR2017-MLT](https://rrc.cvc.uab.es/?ch=8&com=introduction), [LSVT (train_full_images_0/1.tar.gz 4.1G)](https://rrc.cvc.uab.es/?ch=16&com=introduction), [ReCTS](https://rrc.cvc.uab.es/?ch=12&com=introduction), [TextOCR](https://textvqa.org/textocr/dataset/).
-3. Rename the 7 downloaded image dirs into an "img" dir under the 7 sub-dirs. For example, "mv [Your downloaded ArT train images] pretrain/ArT/img" and "mv [Your downloaded ReCTS train images] pretrain/ReCTS/img".
-4. Make a new dir named "revjpegs" in this main dir, and make "pretrain" dir and sub-dirs to make sure that the dir "revjpegs" has the same sub-dir structure as the "pretrain" dir. For example, it should has the dirs "revjpegs/pretrain/ArT/img" and "revjpegs/pretrain/ReCTS/img", etc, corresponding to "pretrain/ArT/img" and "pretrain/ReCTS/img" respectively.
-5. Download the fbcnn_color.pth following this [Readme.md](https://github.com/qcf-568/OSTF/tree/main/FBCNN#readme). In the [FBCNN dir](https://github.com/qcf-568/OSTF/tree/main/FBCNN), run the command to create reverse jpeg images for each of the 7 sub-dir images of the pretrain dir. For example, run "CUDA_VISIBLE_DEVICES=0 python app.py --inp pretrain/ArT/img/ --out revjpegs/ArT/img/" and "CUDA_VISIBLE_DEVICES=0 python app.py --inp pretrain/ReCTS/img/ --out revjpegs/ReCTS/img/".
-
-Finally, after the above 5 steps, in this main dir, you will get such dir structre:
-```
-FBCNN---...
-  |
-configs---...
-  |
-pretrain---ArT---img---....
-  |         |     |
-  |         |   train.pk
-  |         |
-  |        ICDAR2015---img---...
-  |         |           |
-  |         |         train.pk
-  |         |
-  |        ...
-  |
-revjpeg---pretrain---ArT---img---....
-  |                   |     |
-  |                   |   train.pk
-  |                   |
-  |                   ICDAR2015---img---...
-  |                   |           |
-  |                   |         train.pk
-  |                   |
-  |                  ...
-  |
-mmcv_custom---...
-  |
-mmdet---...
-  |
-tools---...
-  |
-mmacc---...
-```
-#### The Texture Jitter method is implemented as "TextureSG" in "txt_pipeline" of the config files (e.g. [here](https://github.com/qcf-568/OSTF/blob/main/configs/cascade_xsrnet.py#L267)), its source code is [here](https://github.com/qcf-568/OSTF/blob/main/mmdet/datasets/transforms/transforms.py#L344). The key function for the Texture Jitter method is the function ["img_tamper" in Line450](https://github.com/qcf-568/OSTF/blob/main/mmdet/datasets/transforms/transforms.py#L450).
-
 #### The DAF framework is implemented as [DFPNCMap3](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/dfpn_cmap3.py#L28) and [CascadeCMap3](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/cascade_cmap3.py#L46) for Faster R-CNN and Cascade R-CNN respectively.
 
 DAF key implementation (take the [Faster R-CNN based DAF](https://github.com/qcf-568/OSTF/blob/main/mmdet/models/roi_heads/dfpn_cmap3.py#L28) as an example): 
