@@ -9,6 +9,12 @@
 <font size=10>Researchers are welcome 😃 to apply for this dataset by sending an email to  202221012612@mail.scut.edu.cn (with institution email address) and introducing:</font><br/>
 1. Who you are and your institution.
 2. Who is your supervisor/mentor.
+
+### The [Text Forensics Reasoning (TFR) dataset](https://github.com/qcf-568/TextShield) is now publicly available at [Google Drive](https://pan.baidu.com/s/1V11tO2XSd1GELC0lDsliJQ?pwd=TFRB) and [Baidu Drive](https://pan.baidu.com/s/1V11tO2XSd1GELC0lDsliJQ?pwd=TFRB). 
+
+<font size=10>Researchers are welcome 😃 to apply for this dataset by sending an email to  202221012612@mail.scut.edu.cn (with institution email address) and introducing:</font><br/>
+1. Who you are and your institution.
+2. Who is your supervisor/mentor.
 ---
 ### OSTF Train data preparation
 1. Apply, download and unzip the OSTF dataset.
@@ -42,12 +48,11 @@ mmacc---srnet---...
 ```
 ---
 ### Texture Jitter train data preparation
-1. Download and unzip the [pretrain_pk.zip](https://drive.google.com/file/d/1xvu82bZvgq7TBXEjByFvuGi6th5ifsHY/view?usp=sharing) in this dir. After unzip, you will get a new dir named "pretrain" with 7 sub-dirs (ArT, ICDAR2013, ICDAR2015, ICDAR2017-MLT, LSVT, ReCTS, TextOCR).
-2. Download and unzip the [msk.zip](https://drive.google.com/file/d/1KIcuNZ-9QRRtnPsXRkLWbaOjpyCtNHr6/view?usp=sharing) in the new "pretrain" dir. After unzip, you will get 7 new dirs all named 'msk' under the above 7 sub-dirs. 
-3. Download the dataset ***training set images*** from [ArT](https://rrc.cvc.uab.es/?ch=14&com=introduction), [ICDAR2013 (Task 2.4: End to End (2015 edition))](https://rrc.cvc.uab.es/?ch=2&com=introduction), [ICDAR2015](https://rrc.cvc.uab.es/?ch=4&com=introduction), [ICDAR2017-MLT](https://rrc.cvc.uab.es/?ch=8&com=introduction), [LSVT](https://rrc.cvc.uab.es/?ch=16&com=introduction), [ReCTS](https://rrc.cvc.uab.es/?ch=12&com=introduction), [TextOCR](https://textvqa.org/textocr/dataset/).
-4. Rename the 7 downloaded image dirs into an "img" dir under the 7 sub-dirs. For example, "mv [Your downloaded ArT train images] pretrain/ArT/img" and "mv [Your downloaded ReCTS train images] pretrain/ReCTS/img".
-5. Make a new dir named "revjpegs" in this main dir, and make sub-dirs to make sure that the dir "revjpegs" has the same sub-dir structure as the "pretrain" dir. For example, it should has the dirs "revjpegs/ArT/img" and "revjpegs/ReCTS/img", etc, corresponding to "pretrain/ArT/img" and "pretrain/ReCTS/img" respectively.
-6. Download the fbcnn_color.pth following this [Readme.md](https://github.com/qcf-568/OSTF/tree/main/FBCNN#readme). In the [FBCNN dir](https://github.com/qcf-568/OSTF/tree/main/FBCNN), run the command to create reverse jpeg images for each of the 7 sub-dir images of the pretrain dir. For example, run "CUDA_VISIBLE_DEVICES=0 python app.py --inp pretrain/ArT/img/ --out revjpegs/ArT/img/" and "CUDA_VISIBLE_DEVICES=0 python app.py --inp pretrain/ReCTS/img/ --out revjpegs/ReCTS/img/".
+1. Download and "tar -xvf" the [pretrain.tar](https://pan.baidu.com/s/1d2K9nN4XzxhAbLI-iQPJvg?pwd=OSTF) in this dir. After "tar -xvf", you will get a new dir named "pretrain" with 7 sub-dirs (ArT, ICDAR2013, ICDAR2015, ICDAR2017-MLT, LSVT, ReCTS, TextOCR). There will be a "train.pk" and a "msk" dir in each dir.
+2. Download the dataset ***training set images*** from [ArT](https://rrc.cvc.uab.es/?ch=14&com=introduction), [ICDAR2013 (Task 2.4: End to End (2015 edition))](https://rrc.cvc.uab.es/?ch=2&com=introduction), [ICDAR2015](https://rrc.cvc.uab.es/?ch=4&com=introduction), [ICDAR2017-MLT](https://rrc.cvc.uab.es/?ch=8&com=introduction), [LSVT (train_full_images_0/1.tar.gz 4.1G)](https://rrc.cvc.uab.es/?ch=16&com=introduction), [ReCTS](https://rrc.cvc.uab.es/?ch=12&com=introduction), [TextOCR](https://textvqa.org/textocr/dataset/).
+3. Rename the 7 downloaded image dirs into an "img" dir under the 7 sub-dirs. For example, "mv [Your downloaded ArT train images] pretrain/ArT/img" and "mv [Your downloaded ReCTS train images] pretrain/ReCTS/img".
+4. Make a new dir named "revjpegs" in this main dir, and make "pretrain" dir and sub-dirs to make sure that the dir "revjpegs" has the same sub-dir structure as the "pretrain" dir. For example, it should has the dirs "revjpegs/pretrain/ArT/img" and "revjpegs/pretrain/ReCTS/img", etc, corresponding to "pretrain/ArT/img" and "pretrain/ReCTS/img" respectively.
+5. Download the fbcnn_color.pth following this [Readme.md](https://github.com/qcf-568/OSTF/tree/main/FBCNN#readme). In the [FBCNN dir](https://github.com/qcf-568/OSTF/tree/main/FBCNN), run the command to create reverse jpeg images for each of the 7 sub-dir images of the pretrain dir. For example, run "CUDA_VISIBLE_DEVICES=0 python app.py --inp pretrain/ArT/img/ --out revjpegs/ArT/img/" and "CUDA_VISIBLE_DEVICES=0 python app.py --inp pretrain/ReCTS/img/ --out revjpegs/ReCTS/img/".
 
 Finally, after the above 5 steps, in this main dir, you will get such dir structre:
 ```
@@ -65,15 +70,15 @@ pretrain---ArT---img---....
   |         |
   |        ...
   |
-revjpeg---ArT---img---....
-  |         |     |
-  |         |   train.pk
-  |         |
-  |        ICDAR2015---img---...
-  |         |           |
-  |         |         train.pk
-  |         |
-  |        ...
+revjpeg---pretrain---ArT---img---....
+  |                   |     |
+  |                   |   train.pk
+  |                   |
+  |                   ICDAR2015---img---...
+  |                   |           |
+  |                   |         train.pk
+  |                   |
+  |                  ...
   |
 mmcv_custom---...
   |
@@ -115,8 +120,15 @@ Given a config file that contains the model defination you want to pretrain (e.g
 Just need to modify the pre-trained weight into your pre-trained weights, the official ones are [here](https://drive.google.com/file/d/1ezb6ox-nlDk1UspCYGsSqSeSlH6DdMvC/view?usp=sharing). For example, in [cascade_xsrnet.py](https://github.com/qcf-568/OSTF/blob/main/configs/cascade_xsrnet.py), modify the [Line602](https://github.com/qcf-568/OSTF/blob/main/configs/cascade_xsrnet.py#L602) from 'cascade.pth' into your pre-trained weights.
 
 ---
+### Tiny training implement
+[Here](https://pan.baidu.com/s/12Ct3jUtoqLhVFkabST1Njg?pwd=3dvz) is a tiny implement of the training code and prepared data for fast try. The playground training and test data are all prepared. This is the Cascade R-CNN training only with the Texture Jitter ICDAR2013 and tested on Tampered IC13. To run the code only needs 3 steps:
+1. Download and unzip the file. In the new dir, rename the [rcnn_swin.pth](https://github.com/qcf-568/Det_Baseline) ("rcnn_swin.pth" in the baseline zip file) to'cascade.pth'.
+2. Modify the tools/dist_train.sh "CUDA_VISIBLE_DEVICES=6,7" to your own GPU ids.
+3. run "bash tools/dist_train.sh cascade_debug.py 2"
+---
+
 ### Pre-trained models
-I have kept almost all the trained models, but the google drive space is not enough to hold all of them. So I provide the Texture Jitter pre-trained models and SR-Net fine-tuned models of Cascade R-CNN and Faster R-CNN being trained with our methods in [this file](https://drive.google.com/file/d/1ezb6ox-nlDk1UspCYGsSqSeSlH6DdMvC/view?usp=sharing). If you need more model weights, you can concat me to get them via educational email.
+All pre-trained models are in [BaiduCloud](https://pan.baidu.com/s/1ziqKnkqgX4pZ20MiutyCdQ?pwd=dets) or [ModelScope](https://www.modelscope.cn/models/DanceText/DAF/summary). Weights are in the "pths" dir. "pths/dfpn/srnet.pth": the faster-rcnn model fine-tuned on SRNet subset. "pths/cascade/srnet.pth": the cascade-rcnn model fine-tuned on SRNet subset.
 
 ---
 ### Inference
@@ -139,3 +151,28 @@ After inference, the model prediction is converted into .txt files, zipped and e
 
 ---
 ### Any bug or question please open an issue or concat me with email.
+
+---
+### License
+
+The project is under [CC-BY-NC-4.0](https://www.creativecommons.org/licenses/by-nc/4.0/deed.en) license.
+
+---
+### Ackownledgement
+
+The **SRNet** part of the OSTF dataset is directly borrowed from the [Tampered IC13 dataset](https://github.com/wangyuxin87/Tampered-IC13), thanks for their great pioneering work!
+
+---
+### Citation
+If you use the OSTF dataset, the Texture Jitter method or the DAF method, please cite this paper.
+```
+@inproceedings{ostf,
+  title={Revisiting tampered scene text detection in the era of generative AI},
+  author={Qu, Chenfan and Zhong, Yiwu and Guo, Fengjun and Jin, Lianwen},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={1},
+  pages={694--702},
+  year={2025}
+}
+```
