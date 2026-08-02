@@ -10,6 +10,8 @@
 1. Who you are and your institution.
 2. Who is your supervisor/mentor.
 
+You can also apply for this dataset via http://121.41.49.212:9000/apply/ostf
+
 ### The [Text Forensics Reasoning (TFR) dataset](https://github.com/qcf-568/TextShield) is now publicly available at [Google Drive](https://pan.baidu.com/s/1V11tO2XSd1GELC0lDsliJQ?pwd=TFRB) and [Baidu Drive](https://pan.baidu.com/s/1V11tO2XSd1GELC0lDsliJQ?pwd=TFRB). 
 
 <font size=10>Researchers are welcome 😃 to apply for this dataset by sending an email to  202221012612@mail.scut.edu.cn (with institution email address) and introducing:</font><br/>
