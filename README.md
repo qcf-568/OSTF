@@ -50,7 +50,7 @@ mmacc---srnet---...
 ```
 ---
 ### Texture Jitter train data preparation
-1. Download and "tar -xvf" the [pretrain.tar](https://pan.baidu.com/s/1d2K9nN4XzxhAbLI-iQPJvg?pwd=OSTF) in this dir. After "tar -xvf", you will get a new dir named "pretrain" with 7 sub-dirs (ArT, ICDAR2013, ICDAR2015, ICDAR2017-MLT, LSVT, ReCTS, TextOCR). There will be a "train.pk" and a "msk" dir in each dir.
+1. Download and "tar -xvf" the [pretrain.tar](https://pan.baidu.com/s/1d2K9nN4XzxhAbLI-iQPJvg?pwd=OSTF) or [pretrain.tar](https://www.modelscope.cn/models/DanceText/DAF/file/view/master/pretrain.tar) in this dir. After "tar -xvf", you will get a new dir named "pretrain" with 7 sub-dirs (ArT, ICDAR2013, ICDAR2015, ICDAR2017-MLT, LSVT, ReCTS, TextOCR). There will be a "train.pk" and a "msk" dir in each dir.
 2. Download the dataset ***training set images*** from [ArT](https://rrc.cvc.uab.es/?ch=14&com=introduction), [ICDAR2013 (Task 2.4: End to End (2015 edition))](https://rrc.cvc.uab.es/?ch=2&com=introduction), [ICDAR2015](https://rrc.cvc.uab.es/?ch=4&com=introduction), [ICDAR2017-MLT](https://rrc.cvc.uab.es/?ch=8&com=introduction), [LSVT (train_full_images_0/1.tar.gz 4.1G)](https://rrc.cvc.uab.es/?ch=16&com=introduction), [ReCTS](https://rrc.cvc.uab.es/?ch=12&com=introduction), [TextOCR](https://textvqa.org/textocr/dataset/).
 3. Rename the 7 downloaded image dirs into an "img" dir under the 7 sub-dirs. For example, "mv [Your downloaded ArT train images] pretrain/ArT/img" and "mv [Your downloaded ReCTS train images] pretrain/ReCTS/img".
 4. Make a new dir named "revjpegs" in this main dir, and make "pretrain" dir and sub-dirs to make sure that the dir "revjpegs" has the same sub-dir structure as the "pretrain" dir. For example, it should has the dirs "revjpegs/pretrain/ArT/img" and "revjpegs/pretrain/ReCTS/img", etc, corresponding to "pretrain/ArT/img" and "pretrain/ReCTS/img" respectively.
@@ -124,7 +124,7 @@ Just need to modify the pre-trained weight into your pre-trained weights, the of
 ---
 ### Tiny training implement
 [Here](https://pan.baidu.com/s/12Ct3jUtoqLhVFkabST1Njg?pwd=3dvz) is a tiny implement of the training code and prepared data for fast try. The playground training and test data are all prepared. This is the Cascade R-CNN training only with the Texture Jitter ICDAR2013 and tested on Tampered IC13. To run the code only needs 3 steps:
-1. Download and unzip the file. In the new dir, rename the [rcnn_swin.pth](https://github.com/qcf-568/Det_Baseline) ("rcnn_swin.pth" in the baseline zip file) to'cascade.pth'.
+1. Download and unzip the file. In the new dir, rename the [rcnn_swin.pth](https://www.modelscope.cn/models/DanceText/DAF/file/view/master/rcnn_swin.pth) to'cascade.pth'.
 2. Modify the tools/dist_train.sh "CUDA_VISIBLE_DEVICES=6,7" to your own GPU ids.
 3. run "bash tools/dist_train.sh cascade_debug.py 2"
 ---
